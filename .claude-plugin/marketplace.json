@@ -1,0 +1,31 @@
+{
+  "name": "u13",
+  "description": "Workflow plugins for AI coding agents: a risk-based change review loop, lightweight project memory, and task planning.",
+  "owner": {
+    "name": "u13",
+    "url": "https://github.com/u13"
+  },
+  "plugins": [
+    {
+      "name": "review-loop",
+      "source": "./plugins/review-loop",
+      "description": "Preflight, implement, review, finish. Picks the depth automatically from the risk of the change. Works without git and without docs.",
+      "category": "workflow",
+      "tags": ["review", "workflow", "quality"]
+    },
+    {
+      "name": "project-memory",
+      "source": "./plugins/project-memory",
+      "description": "Short, ID-numbered decisions, status and backlog kept in .u13/memory so any session can continue where the last one stopped.",
+      "category": "workflow",
+      "tags": ["memory", "decisions", "status"]
+    },
+    {
+      "name": "task-planner",
+      "source": "./plugins/task-planner",
+      "description": "Clarify and split big tasks into subtasks with a plan file. Decisions are made by you (manual) or by a separate decider agent (delegate).",
+      "category": "workflow",
+      "tags": ["planning", "decisions"]
+    }
+  ]
+}

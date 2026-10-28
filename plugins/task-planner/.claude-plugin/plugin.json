@@ -1,0 +1,10 @@
+{
+  "name": "task-planner",
+  "version": "0.1.0",
+  "description": "Clarify and split big tasks into subtasks with a plan file. Decisions are made by you (manual) or by a separate decider agent (delegate).",
+  "author": { "name": "u13", "url": "https://github.com/u13" },
+  "homepage": "https://github.com/u13/ai-plugins",
+  "repository": "https://github.com/u13/ai-plugins",
+  "license": "MIT",
+  "keywords": ["planning", "decisions", "tasks"]
+}

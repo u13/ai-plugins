@@ -1,0 +1,10 @@
+{
+  "name": "review-loop",
+  "version": "0.1.0",
+  "description": "Preflight, implement, review, finish. Picks the depth automatically from the risk of the change. Works without git and without docs.",
+  "author": { "name": "u13", "url": "https://github.com/u13" },
+  "homepage": "https://github.com/u13/ai-plugins",
+  "repository": "https://github.com/u13/ai-plugins",
+  "license": "MIT",
+  "keywords": ["review", "workflow", "quality", "subagents"]
+}

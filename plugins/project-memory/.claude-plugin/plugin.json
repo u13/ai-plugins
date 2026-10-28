@@ -1,0 +1,10 @@
+{
+  "name": "project-memory",
+  "version": "0.1.0",
+  "description": "Short, ID-numbered decisions, status and backlog kept in .u13/memory so any session can continue where the last one stopped.",
+  "author": { "name": "u13", "url": "https://github.com/u13" },
+  "homepage": "https://github.com/u13/ai-plugins",
+  "repository": "https://github.com/u13/ai-plugins",
+  "license": "MIT",
+  "keywords": ["memory", "decisions", "status", "backlog"]
+}
