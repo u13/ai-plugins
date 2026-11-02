@@ -1,0 +1,10 @@
+{
+  "name": "idea-refiner",
+  "version": "0.2.0",
+  "description": "Turn a rough project idea into a confirmed brief. Interviews you in rounds, analyses the idea, proposes options and stops only when nothing important is unclear.",
+  "author": { "name": "u13", "url": "https://github.com/u13" },
+  "homepage": "https://github.com/u13/ai-plugins",
+  "repository": "https://github.com/u13/ai-plugins",
+  "license": "MIT",
+  "keywords": ["idea", "requirements", "brief", "discovery"]
+}

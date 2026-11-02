@@ -1,6 +1,6 @@
 ---
 description: Post-implementation review loop - code review and completeness review, then finish until approved
-argument-hint: [intent, plan file or acceptance checklist - optional]
+argument-hint: "[intent, plan file or acceptance checklist - optional]"
 ---
 The change is already implemented. Intent (optional): $ARGUMENTS
 

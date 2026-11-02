@@ -1,11 +1,18 @@
 {
   "name": "u13",
-  "description": "Workflow plugins for AI coding agents: a risk-based change review loop, lightweight project memory, and task planning.",
+  "description": "Workflow plugins for AI coding agents: idea refinement, task planning, a risk-based change review loop, and lightweight project memory.",
   "owner": {
     "name": "u13",
     "url": "https://github.com/u13"
   },
   "plugins": [
+    {
+      "name": "idea-refiner",
+      "source": "./plugins/idea-refiner",
+      "description": "Turn a rough project idea into a confirmed brief. Interviews you in rounds, analyses the idea and stops only when nothing important is unclear.",
+      "category": "workflow",
+      "tags": ["idea", "requirements", "brief"]
+    },
     {
       "name": "review-loop",
       "source": "./plugins/review-loop",

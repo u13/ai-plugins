@@ -1,9 +1,10 @@
 # u13 / ai-plugins
 
-Three independent plugins for [Claude Code](https://code.claude.com). Install any of them, in any combination. None requires another. When more than one is installed, they cooperate (see [How they work together](#how-they-work-together)).
+Four independent plugins for [Claude Code](https://code.claude.com). Install any of them, in any combination. None requires another. When more than one is installed, they cooperate (see [How they work together](#how-they-work-together)).
 
 | Plugin | Use it when you want | Files it creates in your project |
 |---|---|---|
+| [`idea-refiner`](plugins/idea-refiner/README.md) | a rough idea questioned and sharpened until nothing important is unclear, ending in a written brief | `.u13/brief/*` |
 | [`review-loop`](plugins/review-loop/README.md) | every non-trivial change checked before and after it is made, with the depth chosen automatically | none |
 | [`project-memory`](plugins/project-memory/README.md) | a short log of decisions, status and backlog so a new session can continue where the last one stopped | `.u13/memory/*` |
 | [`task-planner`](plugins/task-planner/README.md) | a big or unclear task clarified and split into subtasks, with decisions made by you or by a separate agent | `.u13/plans/*` |
@@ -38,12 +39,13 @@ That is recorded in `.claude/settings.local.json`, which stays out of git.
 
 ### Step 2. Install the plugins you need
 
-Pick any of them. All three are optional and independent.
+Pick any of them. All four are optional and independent.
 
 ```bash
+claude plugin install idea-refiner@u13
+claude plugin install task-planner@u13
 claude plugin install review-loop@u13
 claude plugin install project-memory@u13
-claude plugin install task-planner@u13
 ```
 
 The default is `user` scope: you get the plugin in every project on this machine. Use `--scope` to choose differently:
@@ -85,6 +87,18 @@ claude plugin update review-loop@u13
 Auto-update is off by default for third-party marketplaces. Enable it in `/plugin` > Marketplaces.
 
 ---
+
+## idea-refiner
+
+**What it does.** Takes a rough idea for a project and makes it concrete. A separate `challenger` agent analyses it (it decides nothing) (gaps, contradictions, risks, simpler alternatives, existing solutions), and you are asked what is unclear in rounds of about 5 questions, each with options and a recommendation. It also looks at the idea as a business: demand, monetization and costs, UX/UI and user psychology, marketing. It stops only when every important point is agreed, then writes a brief.
+
+**Use it for:** the stage before planning: a new product, tool or feature set that is not defined yet.
+
+**How to use.** Describe the idea in plain words, or call `/refine-idea <idea>`. There is no autopilot: the idea has to come from you. Every question has options with a recommendation, plus **Discuss** and **You decide** for that one question. Things that define the idea itself, pricing, public naming, security or legal matters, irreversible choices and credentials still need your explicit yes.
+
+**Creates:** `.u13/brief/<date>-<slug>.md`. At the end it points to `/plan-task` with the brief, if `task-planner` is installed.
+
+Details: [plugins/idea-refiner/README.md](plugins/idea-refiner/README.md).
 
 ## review-loop
 
@@ -147,10 +161,12 @@ Each plugin works alone. If more than one is installed, extra behaviour switches
 
 | Installed together | What changes |
 |---|---|
+| `idea-refiner` + `task-planner` | The refiner ends by pointing to `/plan-task` with the finished brief as the confirmed requirements. |
+| `idea-refiner` + `project-memory` | Existing decisions are read before questions are asked, and the brief's decisions and parked items are logged. |
 | `task-planner` + `review-loop` | Each subtask of a plan goes through the review loop, and the plan file doubles as its intent and list of changed files. |
 | `review-loop` + `project-memory` | Reviewers check changes against your recorded decisions (`D-` IDs), and the loop ends by updating status, decisions and backlog. |
 | `task-planner` + `project-memory` | The planner reads decisions and status before asking questions, and logs delegated decisions with a `[delegated]` tag. |
-| all three | Plan, review each subtask, record what was decided and done. |
+| all four | Refine the idea, plan it, review each subtask, record what was decided and done. |
 
 ## What goes into `.u13/`
 
@@ -164,6 +180,8 @@ Each plugin works alone. If more than one is installed, extra behaviour switches
     BACKLOG.md          deferred items with priority P0 to P2
     HISTORY.md          finished milestones, one line each (read only on demand)
     decisions/          long explanations, only when needed
+  brief/           idea-refiner
+    <date>-<slug>.md    one confirmed brief per idea
   plans/           task-planner
     <date>-<slug>.md    one plan per larger task
 ```
@@ -176,7 +194,7 @@ You do not need this file. Everything has a default and works out of the box. Ke
 
 | Key | Default | Used by | Meaning |
 |---|---|---|---|
-| `language` | `English` | all | Language of reports to you. Code and docs follow your project. |
+| `language` | `English` | all | Language of reports to you. Code and docs follow your project. `idea-refiner` writes its brief in the language you use unless this is set. |
 | `decisions` | `manual` | review-loop, task-planner | `manual`, or `delegate` to let the decider agent answer open questions in every task (you can also just say "you decide" in a prompt). |
 | `decider_model` | `ask` | task-planner | Model for the decider: `ask` (asked once, then stored here), `inherit`, `opus`, `sonnet`, `haiku`. |
 
