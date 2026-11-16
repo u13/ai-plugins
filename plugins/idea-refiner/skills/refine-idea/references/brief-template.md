@@ -28,6 +28,8 @@ Later: ...
 - ...
 ## Constraints
 ## External services and credentials
+## Implementation tools and resources
+Needed: <tool, service, skill, person, equipment> - owner has | owner lacks | unknown - estimate: <labelled as estimate>
 ## Demand and market
 Sources: <URL and date, or `unverified`>
 ## Business model and costs
@@ -39,12 +41,15 @@ Sources: <URL and date, or `unverified`>
 - <risk> - <mitigation or who answers>
 
 ## Decisions
-Status tags: confirmed | delegated | proposed | assumed | parked
+Status tags: confirmed | delegated | proposed | assumed | parked. Minor stress-test notes carry the tag [stress-test].
 - [confirmed] <decision>. Why: <reason>
 - [delegated] <decision the user handed to the AI>. Why: <reason>
 
 ## Parked
 - <item> - consequence of leaving it open: ... - revisit when: ...
+
+## Stress-test log
+- cycle <n> | <date> | angles | blocker <x> major <y> minor <z> | outcome
 
 ## Log
 - <date> round <n>: <one line: what was agreed or changed>

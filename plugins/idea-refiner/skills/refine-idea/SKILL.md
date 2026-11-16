@@ -1,6 +1,6 @@
 ---
 name: refine-idea
-description: Use when the user has a project, product, tool or feature-set idea that is not fully defined - "I have an idea", "help me flesh this out", "let's refine this", "doprecyzujmy pomysł". Interviews in rounds and analyses the idea until every important point is agreed, then writes a brief that planning can start from. The idea comes from the user, so every point is decided by the user, and the AI only asks, analyses and proposes.
+description: Use when the user has a project, product, tool or feature-set idea that is not fully defined - "I have an idea", "help me flesh this out", "let's refine this", "doprecyzujmy pomysł". Interviews in rounds and analyses the idea until every important point is agreed, stress-tests the result with independent critics, then writes a brief that planning can start from. The idea comes from the user, so every point is decided by the user, and the AI only asks, analyses and proposes.
 ---
 
 # Refine idea
@@ -34,15 +34,19 @@ Each round:
 
 After round 3 without being ready, say plainly what still blocks and why, and let the user choose: keep going, park the rest with stated consequences, or stop.
 
-## 4. Confirm
-When every readiness condition holds, show a one-screen summary (what is built, for whom, in/out, key decisions, top risks, parked items) and ask: "Is this exactly what you want built?" Set `Status: ready` only after a clear yes. A change request sends you back into a round.
+## 4. Stress-test
+When everything is agreed (readiness conditions 1-3), run the stress-test automatically, without asking, unless the user said to skip it. Follow `references/stress-test.md`: independent critics review the brief, findings that need a decision go back into rounds, and the cycle repeats until one returns no blocker or major finding. Never resolve a contradiction yourself.
 
-## 5. Hand off
+## 5. Confirm
+When every readiness condition holds, show a one-screen summary (what is built, for whom, in/out, key decisions, top risks, parked items, and the minor stress-test notes as a separate list) and ask: "Is this exactly what you want built?" Set `Status: ready` only after a clear yes. A change request sends you back into a round.
+
+## 6. Hand off
 - Save the final brief at `.u13/brief/<YYYY-MM-DD>-<slug>.md` (slug: 2-5 words, lowercase ASCII letters, digits and hyphens only).
 - If `project-memory` is installed, run `project-memory:memory-update`: decisions (the ones the user handed to the AI are tagged `[delegated]`) and parked items.
 - Point to the next step. If `task-planner` is installed: suggest `/plan-task Plan and build from .u13/brief/<file>.md - treat the brief as the confirmed requirements` and offer to start it now. Otherwise say the next step is splitting the brief into tasks, and that the brief is self-contained for any agent.
 
 ## Rules
+- Findings from the critics are questions, not changes. Nothing enters the brief as agreed until the user confirms it, except minor notes tagged `[stress-test]`, which the final yes covers.
 - Never present your own invention as the user's idea. Anything you add is `proposed` until the user says yes.
 - Be honest. If the idea has a fundamental problem (no clear user, a much simpler way, an existing product that already does it), say so before more questions.
 - Keep questions about what changes what gets built. No filler, no repeats of answered points.

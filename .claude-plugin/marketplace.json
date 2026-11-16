@@ -9,7 +9,7 @@
     {
       "name": "idea-refiner",
       "source": "./plugins/idea-refiner",
-      "description": "Turn a rough project idea into a confirmed brief. Interviews you in rounds, analyses the idea and stops only when nothing important is unclear.",
+      "description": "Turn a rough project idea into a confirmed brief. Interviews you in rounds, analyses and stress-tests the idea with independent critics, and stops only when nothing important is unclear.",
       "category": "workflow",
       "tags": ["idea", "requirements", "brief"]
     },

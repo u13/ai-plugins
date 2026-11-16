@@ -5,7 +5,8 @@ The idea is ready for planning when ALL of these hold:
 1. Every area below that applies to the project's purpose is filled with agreed content. The others are marked "not applicable" with a reason.
 2. No open questions. No `assumed` items. No contradictions.
 3. Every `parked` item states the consequence of leaving it open and a trigger to revisit it.
-4. The user said yes to the final summary.
+4. The last stress-test cycle found no blocker or major finding (or the user skipped it).
+5. The user said yes to the final summary.
 
 ## Areas
 1. **Problem** - what pain or opportunity, for whom, what happens today without it.
@@ -23,11 +24,12 @@ The idea is ready for planning when ALL of these hold:
 13. **Business model and costs** - how it could earn (options with pros and cons), what it costs to build and to run (hosting, APIs, support, time), where it breaks even. Pricing is the user's decision.
 14. **Experience** - UX and UI: the core flow, key screens and states (empty, loading, error), friction, onboarding. Psychology: why a person starts, trusts, comes back, and what makes them hesitate or leave.
 15. **Reaching users** - channels, the first users and how to get them, discovery (SEO, communities, partnerships), the message. Positioning is the user's decision.
+16. **Implementation tools and resources** - the concrete tools, services, skills, people, equipment and materials needed to build or run it, what the owner already has and what is missing. Applies to every purpose, lightly for a hobby.
 
 For ideas that are not software (content, a service, an offer), read areas 6, 7 and 11 loosely: constraints and dependencies of any kind, and the first useful step.
 
 ## Which areas apply
-Ask the project's purpose in round 1 (unless the user already said it). It decides how deep areas 12-15 go:
+Area 16 applies to every purpose. Ask the project's purpose in round 1 (unless the user already said it). It decides how deep areas 12-15 go:
 
 | Purpose | 12 Demand | 13 Business and costs | 14 Experience | 15 Reaching users |
 |---|---|---|---|---|

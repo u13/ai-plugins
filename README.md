@@ -90,7 +90,7 @@ Auto-update is off by default for third-party marketplaces. Enable it in `/plugi
 
 ## idea-refiner
 
-**What it does.** Takes a rough idea for a project and makes it concrete. A separate `challenger` agent analyses it (it decides nothing) (gaps, contradictions, risks, simpler alternatives, existing solutions), and you are asked what is unclear in rounds of about 5 questions, each with options and a recommendation. It also looks at the idea as a business: demand, monetization and costs, UX/UI and user psychology, marketing. It stops only when every important point is agreed, then writes a brief.
+**What it does.** Takes a rough idea for a project and makes it concrete. A separate `challenger` agent, which decides nothing, looks for gaps, contradictions, risks, simpler alternatives and existing solutions, and you are asked what is unclear in rounds of about 5 questions, each with options and a recommendation. It also looks at the idea as a business: demand, monetization and costs, UX/UI and user psychology, marketing. When everything is agreed it runs an automatic stress-test: independent critics (skeptic, market, economics, experience, implementation, trust, coherence) review the brief and send what they find back to you until nothing needs a decision. Then it writes the brief.
 
 **Use it for:** the stage before planning: a new product, tool or feature set that is not defined yet.
 
